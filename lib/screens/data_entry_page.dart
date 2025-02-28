@@ -26,56 +26,58 @@ class _DataEntryPageState extends ConsumerState<DataEntryPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextField(
-              controller: _jwtController,
-              decoration: InputDecoration(
-                  filled: true,
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(4)),
-                    borderSide: BorderSide(width: 1, color: Colors.black),
-                  ),
-                  border: OutlineInputBorder(
+      body: SafeArea(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextField(
+                controller: _jwtController,
+                decoration: InputDecoration(
+                    filled: true,
+                    focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(4)),
-                      borderSide: BorderSide(width: 1, color: Colors.grey)),
-                  hintText: "jwt token",
-                  hintStyle: TextStyle(fontSize: 16)),
+                      borderSide: BorderSide(width: 1, color: Colors.black),
+                    ),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(4)),
+                        borderSide: BorderSide(width: 1, color: Colors.grey)),
+                    hintText: "jwt token",
+                    hintStyle: TextStyle(fontSize: 16)),
+              ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextField(
-              controller: _billIDController,
-              decoration: InputDecoration(
-                  filled: true,
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(4)),
-                    borderSide: BorderSide(width: 1, color: Colors.black),
-                  ),
-                  border: OutlineInputBorder(
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextField(
+                controller: _billIDController,
+                decoration: InputDecoration(
+                    filled: true,
+                    focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(4)),
-                      borderSide: BorderSide(width: 1, color: Colors.grey)),
-                  hintText: "bill id",
-                  hintStyle: TextStyle(fontSize: 16)),
+                      borderSide: BorderSide(width: 1, color: Colors.black),
+                    ),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(4)),
+                        borderSide: BorderSide(width: 1, color: Colors.grey)),
+                    hintText: "bill id",
+                    hintStyle: TextStyle(fontSize: 16)),
+              ),
             ),
-          ),
-          TextButton(
-              onPressed: () {
-                final String billIDstr = _billIDController.text;
-                final int billID = int.parse(billIDstr);
+            TextButton(
+                onPressed: () {
+                  final String billIDstr = _billIDController.text;
+                  final int billID = int.parse(billIDstr);
 
-                final String jwt = _jwtController.text;
-                ref.read(perfsProvider.notifier).set(jwt, billID);
-                final perfs = UserPerfs(billID: billID, jwt: jwt);
-                Navigator.of(context).pushReplacement(MaterialPageRoute(
-                  builder: (context) => HomePage(perfs: perfs),
-                ));
-              },
-              child: Text("Save")),
-        ],
+                  final String jwt = _jwtController.text;
+                  ref.read(perfsProvider.notifier).set(jwt, billID);
+                  final perfs = UserPerfs(billID: billID, jwt: jwt);
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(
+                    builder: (context) => HomePage(perfs: perfs),
+                  ));
+                },
+                child: Text("Save")),
+          ],
+        ),
       ),
     );
   }

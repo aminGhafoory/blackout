@@ -99,6 +99,7 @@ class HomePage extends ConsumerWidget {
                                   width: 2,
                                 ),
                                 Text(
+                                    style: TextStyle(fontFamily: "Vazirmatn"),
                                     "ثبت کننده : ${data.data[index].registrar}"),
                               ],
                             ),
@@ -110,8 +111,12 @@ class HomePage extends ConsumerWidget {
                               children: [
                                 Icon(Icons.event_available_outlined, size: 20),
                                 SizedBox(width: 2),
-                                Text("برنامه ریزی شده : "),
                                 Text(
+                                  "برنامه ریزی شده : ",
+                                  style: TextStyle(fontFamily: "Vazirmatn"),
+                                ),
+                                Text(
+                                  style: TextStyle(fontFamily: "Vazirmatn"),
                                   data.data[index].isPlanned ? "بله" : "خیر",
                                 )
                               ],
@@ -128,10 +133,14 @@ class HomePage extends ConsumerWidget {
                                         size: 20),
                                     SizedBox(width: 2),
                                     Text(
+                                        style:
+                                            TextStyle(fontFamily: "Vazirmatn"),
                                         "علت: ${data.data[index].reasonOutage}"),
                                   ],
                                 ),
-                                Text("تاریخ ثبت : ${data.data[index].regDate}"),
+                                Text(
+                                    style: TextStyle(fontFamily: "Vazirmatn"),
+                                    "تاریخ ثبت : ${data.data[index].regDate}"),
                               ],
                             ),
                           )
