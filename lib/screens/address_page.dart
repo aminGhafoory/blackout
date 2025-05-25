@@ -16,10 +16,10 @@ class AddressPage extends StatelessWidget {
           child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Text(
-              style: TextStyle(
-                  fontFamily: "Vazirmatn", fontWeight: FontWeight.bold),
+              style: TextStyle(fontFamily: "VazirmatnBold", fontSize: 24),
               "آدرس",
               textDirection: TextDirection.rtl,
             ),

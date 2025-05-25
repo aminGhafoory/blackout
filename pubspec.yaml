@@ -85,6 +85,9 @@ flutter:
     - family: Vazirmatn
       fonts:
         - asset: fonts/Vazirmatn-SemiBold.ttf
+    - family: VazirmatnBold
+      fonts:
+        - asset: fonts/Vazirmatn-Black.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
