@@ -9,7 +9,6 @@ class AddressPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           "Address",
-          textDirection: TextDirection.rtl,
         ),
       ),
       body: SingleChildScrollView(
@@ -27,6 +26,17 @@ class AddressPage extends StatelessWidget {
               style: TextStyle(fontFamily: "Vazirmatn"),
               address ?? "",
               textDirection: TextDirection.rtl,
+            ),
+            Directionality(
+              textDirection: TextDirection.rtl,
+              child: Row(
+                children: [
+                  SizedBox(
+                    width: 2,
+                  ),
+                  Text(style: TextStyle(fontFamily: "Vazirmatn"), ""),
+                ],
+              ),
             ),
           ],
         ),
