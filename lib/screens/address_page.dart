@@ -27,16 +27,8 @@ class AddressPage extends StatelessWidget {
               address ?? "",
               textDirection: TextDirection.rtl,
             ),
-            Directionality(
-              textDirection: TextDirection.rtl,
-              child: Row(
-                children: [
-                  SizedBox(
-                    width: 2,
-                  ),
-                  Text(style: TextStyle(fontFamily: "Vazirmatn"), ""),
-                ],
-              ),
+            Row(
+              children: [],
             ),
           ],
         ),
