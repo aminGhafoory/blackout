@@ -76,3 +76,25 @@ class OutageData {
     );
   }
 }
+
+String convertArabicToPersian(String? input) {
+  final Map<String, String> replacements = {
+    'ي': 'ی', // Arabic Yeh to Persian Yeh
+    'ك': 'ک', // Arabic Kaf to Persian Kaf
+    '‍': '', // Zero-width joiner
+    'ة': 'ه', // Teh Marbuta to Heh
+    'ـ': '', // Kashida (Tatweel)
+    'أ': 'ا', // Alef with Hamza above
+    'إ': 'ا', // Alef with Hamza below
+    'ٱ': 'ا', // Alef Wasla
+    'ء': '', // Hamza (can be kept or removed depending on use case)
+    'آ': 'ا', // Alef Madda to Alef (optional)
+  };
+
+  String result = input ?? "";
+  replacements.forEach((arabicChar, persianChar) {
+    result = result.replaceAll(arabicChar, persianChar);
+  });
+
+  return result;
+}

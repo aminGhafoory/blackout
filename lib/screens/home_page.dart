@@ -1,3 +1,4 @@
+import 'package:blackout/models/blackout.dart';
 import 'package:blackout/models/userperfs.dart';
 import 'package:blackout/providers/blackout_provider.dart';
 import 'package:blackout/providers/user_perfs_provider.dart';
@@ -109,7 +110,7 @@ class HomePage extends ConsumerWidget {
                                   ),
                                   Text(
                                       style: TextStyle(fontFamily: "Vazirmatn"),
-                                      "ثبت کننده : ${data.data[index].registrar}"),
+                                      "ثبت کننده : ${convertArabicToPersian(data.data[index].registrar)}"),
                                 ],
                               ),
                             ),
@@ -146,7 +147,7 @@ class HomePage extends ConsumerWidget {
                                       Text(
                                           style: TextStyle(
                                               fontFamily: "Vazirmatn"),
-                                          "علت: ${data.data[index].reasonOutage}"),
+                                          "علت: ${convertArabicToPersian(data.data[index].reasonOutage)}"),
                                     ],
                                   ),
                                   Text(

@@ -1,3 +1,4 @@
+import 'package:blackout/models/blackout.dart';
 import 'package:flutter/material.dart';
 
 class AddressPage extends StatelessWidget {
@@ -24,7 +25,7 @@ class AddressPage extends StatelessWidget {
             ),
             Text(
               style: TextStyle(fontFamily: "Vazirmatn"),
-              address ?? "",
+              convertArabicToPersian(address),
               textDirection: TextDirection.rtl,
             ),
             Row(
